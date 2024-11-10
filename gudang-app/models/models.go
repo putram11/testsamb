@@ -29,12 +29,11 @@ type PenerimaanBarangHeader struct {
 	TrxInDate    string                   `gorm:"type:date;not null"`
 	TrxInSuppIdf int                      `gorm:"not null"`
 	TrxInNotes   string                   `gorm:"type:varchar(255)"`
-	Details      []PenerimaanBarangDetail `gorm:"foreignKey:TrxInIDF;references:TrxInPK"`
+	TrxInDetails []PenerimaanBarangDetail `gorm:"foreignKey:TrxInIDF;references:TrxInPK"`
 }
 
 type PenerimaanBarangDetail struct {
 	TrxInDPK         int `gorm:"primary_key;autoIncrement"`
-	TrxInIDF         int `gorm:"not null"`
 	TrxInDProductIdf int `gorm:"not null"`
 	TrxInDQtyDus     int `gorm:"not null"`
 	TrxInDQtyPcs     int `gorm:"not null"`
@@ -47,12 +46,11 @@ type PengeluaranBarangHeader struct {
 	TrxOutDate    string                    `gorm:"type:date;not null"`
 	TrxOutSuppIdf int                       `gorm:"not null"`
 	TrxOutNotes   string                    `gorm:"type:varchar(255)"`
-	Details       []PengeluaranBarangDetail `gorm:"foreignKey:TrxOutIDF;references:TrxOutPK"`
+	TrxOutDetails []PengeluaranBarangDetail `gorm:"foreignKey:TrxOutIDF;references:TrxOutPK"`
 }
 
 type PengeluaranBarangDetail struct {
 	TrxOutDPK         int `gorm:"primary_key;autoIncrement"`
-	TrxOutIDF         int `gorm:"not null"`
 	TrxOutDProductIdf int `gorm:"not null"`
 	TrxOutDQtyDus     int `gorm:"not null"`
 	TrxOutDQtyPcs     int `gorm:"not null"`

@@ -169,7 +169,7 @@ Aplikasi ini merupakan sistem manajemen gudang yang memungkinkan pengguna untuk 
         }
         ```
 
-### Struktur Database (PostgreSQL)
+### Query create Database (PostgreSQL)
 
 ```sql
 -- Table Master Supplier
@@ -196,43 +196,27 @@ CREATE TABLE warehouses (
     whsname VARCHAR(255) NOT NULL
 );
 
--- Table Transaksi Penerimaan Barang Header
-CREATE TABLE penerimaan_barang_header (
+-- Tabel Penerimaan Barang Gabungan dengan Detail dalam JSONB
+CREATE TABLE penerimaan_barang (
     trx_in_pk SERIAL PRIMARY KEY,
     trx_in_no VARCHAR(255) NOT NULL,
     whs_idf INT NOT NULL REFERENCES warehouses(whspk),
-    trx_in_date DATE NOT NULL,
     trx_in_supp_idf INT NOT NULL REFERENCES suppliers(supplierpk),
-    trx_in_notes TEXT
+    trx_in_notes TEXT,
+    trx_in_details JSONB NOT NULL
 );
 
--- Table Transaksi Penerimaan Barang Detail
-CREATE TABLE penerimaan_barang_details (
-    trx_in_dpk SERIAL PRIMARY KEY,
-    trx_in_idf INT NOT NULL REFERENCES penerimaan_barang_header(trx_in_pk),
-    trx_in_d_product_idf INT NOT NULL REFERENCES products(productpk),
-    trx_in_d_qty_dus INT NOT NULL,
-    trx_in_d_qty_pcs INT NOT NULL
-);
-
--- Table Transaksi Pengeluaran Barang Header
-CREATE TABLE pengeluaran_barang_header (
+-- Tabel Pengeluaran Barang Gabungan dengan Detail dalam JSONB
+CREATE TABLE pengeluaran_barang (
     trx_out_pk SERIAL PRIMARY KEY,
     trx_out_no VARCHAR(255) NOT NULL,
     whs_idf INT NOT NULL REFERENCES warehouses(whspk),
     trx_out_date DATE NOT NULL,
     trx_out_supp_idf INT NOT NULL REFERENCES suppliers(supplierpk),
-    trx_out_notes TEXT
+    trx_out_notes TEXT,
+    trx_out_details JSONB NOT NULL
 );
 
--- Table Transaksi Pengeluaran Barang Detail
-CREATE TABLE pengeluaran_barang_details (
-    trx_out_dpk SERIAL PRIMARY KEY,
-    trx_out_idf INT NOT NULL REFERENCES pengeluaran_barang_header(trx_out_pk),
-    trx_out_d_product_idf INT NOT NULL REFERENCES products(productpk),
-    trx_out_d_qty_dus INT NOT NULL,
-    trx_out_d_qty_pcs INT NOT NULL
-);
 ```
 
 ### Cara Menggunakan Aplikasi

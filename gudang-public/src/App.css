@@ -1,0 +1,52 @@
+body {
+  font-family: 'Arial', sans-serif;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+h1, p {
+  color: white;
+}
+
+h1 {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-white {
+  color: white !important;
+}
+
+.mt-5 {
+  margin-top: 3rem !important;
+}
+
+.lead {
+  font-size: 1.25rem;
+}
+
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+  padding: 30px;
+}
+
+/* Background image adjustments */
+.container-fluid {
+  min-height: 100vh;
+  padding: 0;
+}
+
+.bg-custom {
+  background: url('https://i0.wp.com/isellerdotblog.wpcomstaging.com/wp-content/uploads/2024/02/warehouse.jpg?fit=1400%2C788&ssl=1') no-repeat center center;
+  background-size: cover;
+}

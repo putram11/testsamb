@@ -2,13 +2,15 @@
 
 #### Deskripsi Aplikasi
 
-Aplikasi ini merupakan sistem manajemen gudang yang memungkinkan pengguna untuk mencatat barang masuk dan barang keluar dari Gudang A. Aplikasi ini dibangun dengan menggunakan **React** untuk frontend dan **Go** untuk backend (API), serta **PostgreSQL** sebagai database.
+Aplikasi ini merupakan sistem manajemen gudang yang memungkinkan pengguna untuk mencatat barang masuk dan keluar dari Gudang A. Aplikasi ini dibangun dengan menggunakan **React** untuk frontend dan **Go** untuk backend (API), serta **PostgreSQL** sebagai database.
 
 **Fitur-fitur utama:**
 
 1. **Penerimaan Barang**: Mencatat penerimaan barang dari Supplier ke Gudang A.
 2. **Pengeluaran Barang**: Mencatat pengeluaran barang dari Gudang A.
 3. **Laporan Stok**: Menampilkan stok barang yang ada di Gudang A, dengan rincian jumlah dus dan pcs.
+
+**[Akses Frontend yang Dideploy di GitHub Pages](https://putram11.github.io/testsamb/)**
 
 ### Teknologi yang Digunakan
 
@@ -216,7 +218,6 @@ CREATE TABLE pengeluaran_barang (
     trx_out_notes TEXT,
     trx_out_details JSONB NOT NULL
 );
-
 ```
 
 ### Cara Menggunakan Aplikasi
@@ -236,4 +237,9 @@ CREATE TABLE pengeluaran_barang (
 
 ### Kesimpulan
 
-Dengan aplikasi ini, Anda dapat mencatat penerimaan dan pengeluaran barang dengan mudah dan memantau stok barang yang ada di gudang. Pastikan Anda sudah mengonfigurasi database dan API dengan benar untuk memastikan aplikasi berjalan lancar.
+Dengan aplikasi ini, Anda dapat mencatat penerimaan dan pengeluaran barang dengan mudah serta memantau stok barang yang ada di gudang. Pastikan Anda sudah mengonfigurasi database dan API dengan benar untuk memastikan aplikasi berjalan lancar.
+
+### Link Deploy Frontend
+
+-   [Gudang Management System Frontend](https://putram11.github.io/testsamb/)
+-   Server not Deployed due to AWS got banned
